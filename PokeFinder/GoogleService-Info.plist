@@ -7,21 +7,21 @@
 	<key>AD_UNIT_ID_FOR_INTERSTITIAL_TEST</key>
 	<string>ca-app-pub-3940256099942544/4411468910</string>
 	<key>CLIENT_ID</key>
-	<string>944785211595-e5al1b4qsc1ic78h3b18uhs8938t9nv9.apps.googleusercontent.com</string>
+	<string>717709535797-d8jlshrp612tpsjgq27qnidq9di9budk.apps.googleusercontent.com</string>
 	<key>REVERSED_CLIENT_ID</key>
-	<string>com.googleusercontent.apps.944785211595-e5al1b4qsc1ic78h3b18uhs8938t9nv9</string>
+	<string>com.googleusercontent.apps.717709535797-d8jlshrp612tpsjgq27qnidq9di9budk</string>
 	<key>API_KEY</key>
-	<string>AIzaSyDbuGqNfc1bOmabnLBfIrsffczHv8st0-4</string>
+	<string>AIzaSyBOC3jJJoh5Ha0NPelMROt3tOUYiAZqqVQ</string>
 	<key>GCM_SENDER_ID</key>
-	<string>944785211595</string>
+	<string>717709535797</string>
 	<key>PLIST_VERSION</key>
 	<string>1</string>
 	<key>BUNDLE_ID</key>
-	<string>com.UpliftedStudios.PushMyNotifs</string>
+	<string>com.UpliftedStudios.PokeFinder</string>
 	<key>PROJECT_ID</key>
-	<string>pushmynotifs-6dd80</string>
+	<string>pokefinder-979fe</string>
 	<key>STORAGE_BUCKET</key>
-	<string>pushmynotifs-6dd80.appspot.com</string>
+	<string>pokefinder-979fe.appspot.com</string>
 	<key>IS_ADS_ENABLED</key>
 	<true/>
 	<key>IS_ANALYTICS_ENABLED</key>
@@ -33,8 +33,8 @@
 	<key>IS_SIGNIN_ENABLED</key>
 	<true/>
 	<key>GOOGLE_APP_ID</key>
-	<string>1:944785211595:ios:a1743b084ef76a79</string>
+	<string>1:717709535797:ios:9be35c5a7c614dd3</string>
 	<key>DATABASE_URL</key>
-	<string>https://pushmynotifs-6dd80.firebaseio.com</string>
+	<string>https://pokefinder-979fe.firebaseio.com</string>
 </dict>
 </plist>

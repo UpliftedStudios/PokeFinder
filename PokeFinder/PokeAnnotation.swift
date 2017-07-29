@@ -166,7 +166,7 @@ class PokeAnnotation: NSObject, MKAnnotation {
     
     var pokemonName: String
     var pokemonNumber: Int
-    var coordinate: CLLocationCoordinate2D
+    var coordinate = CLLocationCoordinate2D()
     var title: String?
     
     init(coordinate: CLLocationCoordinate2D, pokemonNumber: Int) {
