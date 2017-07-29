@@ -27,6 +27,8 @@ class ViewController: UIViewController, MKMapViewDelegate, CLLocationManagerDele
         
         geoFireRef = Database.database().reference()
         geoFire = GeoFire(firebaseRef: geoFireRef)
+        
+        
 
     }
     
@@ -86,7 +88,6 @@ class ViewController: UIViewController, MKMapViewDelegate, CLLocationManagerDele
         if let annotationView = annotationView, let anno = annotation as? PokeAnnotation {
             
             annotationView.canShowCallout = true
-            annotationView.frame = mapView.frame
             annotationView.image = UIImage(named: "\(anno.pokemonNumber)")
             
             let btn = UIButton()
@@ -101,6 +102,7 @@ class ViewController: UIViewController, MKMapViewDelegate, CLLocationManagerDele
     func createSighting(forLocation location: CLLocation, withPokemon pokeId: Int) {
         
         geoFire.setLocation(location, forKey: "\(pokeId)")
+        showSightingsOnMap(location: location)
     }
     
     func showSightingsOnMap(location: CLLocation) {
@@ -150,7 +152,6 @@ class ViewController: UIViewController, MKMapViewDelegate, CLLocationManagerDele
         
         let rand = arc4random_uniform(151) + 1
         createSighting(forLocation: loc, withPokemon: Int(rand))
-        
     }
 
 }
