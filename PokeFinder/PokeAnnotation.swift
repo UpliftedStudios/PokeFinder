@@ -175,7 +175,6 @@ class PokeAnnotation: NSObject, MKAnnotation {
         self.pokemonName = pokemon[pokemonNumber - 1].capitalized
         self.title = self.pokemonName
     }
-    
 }
 
 

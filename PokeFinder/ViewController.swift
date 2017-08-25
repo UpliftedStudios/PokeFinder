@@ -27,9 +27,6 @@ class ViewController: UIViewController, MKMapViewDelegate, CLLocationManagerDele
         
         geoFireRef = Database.database().reference()
         geoFire = GeoFire(firebaseRef: geoFireRef)
-        
-        
-
     }
     
     override func viewDidAppear(_ animated: Bool) {
@@ -147,12 +144,11 @@ class ViewController: UIViewController, MKMapViewDelegate, CLLocationManagerDele
     }
 
     @IBAction func spotRandomPokemon(_ sender: AnyObject) {
-        
+            
         let loc = CLLocation(latitude: mapView.centerCoordinate.latitude, longitude: mapView.centerCoordinate.longitude)
         
         let rand = arc4random_uniform(151) + 1
         createSighting(forLocation: loc, withPokemon: Int(rand))
     }
-
 }
 
