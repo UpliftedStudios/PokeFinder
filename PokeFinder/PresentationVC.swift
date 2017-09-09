@@ -22,8 +22,10 @@ class PresentationVC: UIViewController, UICollectionViewDelegate, UICollectionVi
     @IBOutlet weak var collection: UICollectionView!
     
     var delegate: DataSentDelegate?
-    var pokeArray = [PokeAnnotation]()
+    var pokemons = [PokeAnnotation]()
+    var filteredPokes = [PokeAnnotation]()
     var myCoordinate = CLLocationCoordinate2DMake(0, 0)
+    var inSearchMode = false
     
     override func viewDidLoad() {
         
@@ -44,12 +46,24 @@ class PresentationVC: UIViewController, UICollectionViewDelegate, UICollectionVi
         
         if let cell = collectionView.dequeueReusableCell(withReuseIdentifier: "PokeCell", for: indexPath) as? PokeCell {
             
-            let pokeAnno = PokeAnnotation(coordinate: myCoordinate, pokemonNumber: indexPath.row + 1)
+//            let pokeAnno = PokeAnnotation(coordinate: myCoordinate, pokemonNumber: indexPath.row + 1)
             
+            let pokeAnno: PokeAnnotation!
+            
+            if inSearchMode {
+                
+                pokeAnno = filteredPokes[indexPath.row]
+                cell.configureCell(pokeAnno)
+                
+            } else {
+            
+            pokeAnno = pokemons[indexPath.row]
             cell.configureCell(pokeAnno)
-            
+                
+            }
             
             return cell
+            
         } else {
             
         return UICollectionViewCell()
@@ -61,19 +75,62 @@ class PresentationVC: UIViewController, UICollectionViewDelegate, UICollectionVi
     }
     
     func collectionView(_ collectionView: UICollectionView, numberOfItemsInSection section: Int) -> Int {
+        
+        if inSearchMode {
+            
+            return filteredPokes.count
+        } else {
+            
         return pokemon.count
+        }
     }
+        
     
     func collectionView(_ collectionView: UICollectionView, didSelectItemAt indexPath: IndexPath) {
         
+        var poke: PokeAnnotation
+        
+        if inSearchMode {
+            
+            poke = filteredPokes[indexPath.row + 1]
+        } else {
+            
+            poke = pokemons[indexPath.row + 1]
+        }
+        
         if delegate != nil {
             if collection != nil {
-                let data = indexPath.row + 1
-                delegate?.userDidEnterData(data: data)
+                let poke = indexPath.row + 1
+                delegate?.userDidEnterData(data: poke)
             }
         }
         
         dismiss(animated: true, completion: nil)
+    }
+    
+    func searchBarSearchButtonClicked(_ searchBar: UISearchBar) {
+        view.endEditing(true)
+    }
+    
+    func searchBar(_ searchBar: UISearchBar, textDidChange searchText: String) {
+        
+        if searchBar.text == nil || searchBar.text == "" {
+            
+            collection.reloadData()
+        } else {
+            
+            inSearchMode = true
+            
+            let lower = searchBar.text!.lowercased()
+            
+            filteredPokes = pokemons.filter({$0.pokemonName.range(of: lower) != nil})
+            collection.reloadData()
+        }
+    }
+    
+    func scrollViewWillBeginDragging(_ scrollView: UIScrollView) {
+        
+        searchBar.endEditing(true)
     }
     
     override func touchesBegan(_ touches: Set<UITouch>, with event: UIEvent?) {
