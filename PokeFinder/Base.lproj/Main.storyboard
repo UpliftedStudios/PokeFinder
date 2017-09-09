@@ -34,7 +34,7 @@
                                 <state key="normal" image="pokeball"/>
                                 <connections>
                                     <action selector="spotRandomPokemon:" destination="BYZ-38-t0r" eventType="touchUpInside" id="ndf-e0-G13"/>
-                                    <segue destination="MQF-4I-FrB" kind="show" identifier="presentationVC" id="rjy-CV-avo"/>
+                                    <segue destination="MQF-4I-FrB" kind="presentation" identifier="presentationVC" modalPresentationStyle="overCurrentContext" id="rjy-CV-avo"/>
                                 </connections>
                             </button>
                         </subviews>
@@ -64,7 +64,7 @@
                         <viewControllerLayoutGuide type="top" id="Lys-sd-ftn"/>
                         <viewControllerLayoutGuide type="bottom" id="7jx-03-n8Y"/>
                     </layoutGuides>
-                    <view key="view" contentMode="scaleToFill" id="4VX-PZ-Eu0">
+                    <view key="view" opaque="NO" contentMode="scaleToFill" id="4VX-PZ-Eu0">
                         <rect key="frame" x="0.0" y="0.0" width="375" height="667"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <subviews>
@@ -105,12 +105,13 @@
                                     </collectionViewCell>
                                 </cells>
                             </collectionView>
-                            <searchBar contentMode="redraw" translatesAutoresizingMaskIntoConstraints="NO" id="DOw-AX-2dw">
+                            <searchBar contentMode="redraw" placeholder="Search Pokedex" translatesAutoresizingMaskIntoConstraints="NO" id="DOw-AX-2dw">
                                 <rect key="frame" x="16" y="250" width="343" height="44"/>
                                 <textInputTraits key="textInputTraits"/>
                             </searchBar>
                         </subviews>
-                        <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
+                        <color key="backgroundColor" white="0.0" alpha="0.0" colorSpace="calibratedWhite"/>
+                        <gestureRecognizers/>
                         <constraints>
                             <constraint firstItem="n8V-91-QVB" firstAttribute="trailing" secondItem="4VX-PZ-Eu0" secondAttribute="trailingMargin" id="FvC-si-iY4"/>
                             <constraint firstItem="n8V-91-QVB" firstAttribute="leading" secondItem="DOw-AX-2dw" secondAttribute="leading" id="ZD8-Lw-QGX"/>

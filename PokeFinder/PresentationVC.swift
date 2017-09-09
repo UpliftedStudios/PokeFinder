@@ -33,6 +33,11 @@ class PresentationVC: UIViewController, UICollectionViewDelegate, UICollectionVi
         
         searchBar.returnKeyType = UIReturnKeyType.done
         
+        collection.layer.cornerRadius = 10
+        searchBar.layer.cornerRadius = 10
+        searchBar.clipsToBounds = true
+        
+        
     }
     
     func collectionView(_ collectionView: UICollectionView, cellForItemAt indexPath: IndexPath) -> UICollectionViewCell {
@@ -42,6 +47,7 @@ class PresentationVC: UIViewController, UICollectionViewDelegate, UICollectionVi
             let pokeAnno = PokeAnnotation(coordinate: myCoordinate, pokemonNumber: indexPath.row + 1)
             
             cell.configureCell(pokeAnno)
+            
             
             return cell
         } else {
@@ -68,6 +74,14 @@ class PresentationVC: UIViewController, UICollectionViewDelegate, UICollectionVi
         }
         
         dismiss(animated: true, completion: nil)
+    }
+    
+    override func touchesBegan(_ touches: Set<UITouch>, with event: UIEvent?) {
+        let touch: UITouch? = touches.first
+        
+        if touch?.view != collection {
+            dismiss(animated: true, completion: nil)
+        }
     }
     
     
