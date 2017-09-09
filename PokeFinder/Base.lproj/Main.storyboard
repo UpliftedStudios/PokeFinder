@@ -68,74 +68,61 @@
                         <rect key="frame" x="0.0" y="0.0" width="375" height="667"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <subviews>
-                            <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="dLf-dG-NeW">
-                                <rect key="frame" x="16" y="269" width="343" height="390"/>
-                                <subviews>
-                                    <searchBar contentMode="redraw" translatesAutoresizingMaskIntoConstraints="NO" id="DOw-AX-2dw">
-                                        <rect key="frame" x="0.0" y="0.0" width="343" height="44"/>
-                                        <textInputTraits key="textInputTraits"/>
-                                    </searchBar>
-                                    <collectionView clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="scaleToFill" dataMode="prototypes" translatesAutoresizingMaskIntoConstraints="NO" id="n8V-91-QVB">
-                                        <rect key="frame" x="0.0" y="44" width="343" height="346"/>
-                                        <color key="backgroundColor" red="1" green="0.34509803919999998" blue="0.33333333329999998" alpha="1" colorSpace="calibratedRGB"/>
-                                        <collectionViewFlowLayout key="collectionViewLayout" minimumLineSpacing="10" minimumInteritemSpacing="10" id="PDu-3d-D7K">
-                                            <size key="itemSize" width="83" height="83"/>
-                                            <size key="headerReferenceSize" width="0.0" height="0.0"/>
-                                            <size key="footerReferenceSize" width="0.0" height="0.0"/>
-                                            <inset key="sectionInset" minX="0.0" minY="0.0" maxX="0.0" maxY="0.0"/>
-                                        </collectionViewFlowLayout>
-                                        <cells>
-                                            <collectionViewCell opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" reuseIdentifier="PokeCell" id="hT6-f2-tot" customClass="PokeCell" customModule="PokeFinder" customModuleProvider="target">
-                                                <rect key="frame" x="0.0" y="0.0" width="83" height="83"/>
-                                                <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
-                                                <view key="contentView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center">
-                                                    <rect key="frame" x="0.0" y="0.0" width="83" height="83"/>
-                                                    <autoresizingMask key="autoresizingMask"/>
-                                                    <subviews>
-                                                        <imageView userInteractionEnabled="NO" contentMode="scaleAspectFit" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="1" translatesAutoresizingMaskIntoConstraints="NO" id="mPr-MY-7lc">
-                                                            <rect key="frame" x="0.0" y="0.0" width="83" height="83"/>
-                                                        </imageView>
-                                                    </subviews>
-                                                </view>
-                                                <constraints>
-                                                    <constraint firstAttribute="bottom" secondItem="mPr-MY-7lc" secondAttribute="bottom" id="KNr-hF-uf1"/>
-                                                    <constraint firstItem="mPr-MY-7lc" firstAttribute="leading" secondItem="hT6-f2-tot" secondAttribute="leading" id="tt9-AJ-ht9"/>
-                                                    <constraint firstItem="mPr-MY-7lc" firstAttribute="top" secondItem="hT6-f2-tot" secondAttribute="top" id="uwj-k0-lHY"/>
-                                                    <constraint firstAttribute="trailing" secondItem="mPr-MY-7lc" secondAttribute="trailing" id="yr9-E0-8vV"/>
-                                                </constraints>
-                                                <connections>
-                                                    <outlet property="thumbImg" destination="mPr-MY-7lc" id="p0R-36-5bW"/>
-                                                </connections>
-                                            </collectionViewCell>
-                                        </cells>
-                                    </collectionView>
-                                </subviews>
-                                <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
+                            <collectionView clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="scaleToFill" dataMode="prototypes" translatesAutoresizingMaskIntoConstraints="NO" id="n8V-91-QVB">
+                                <rect key="frame" x="16" y="294" width="343" height="346"/>
+                                <color key="backgroundColor" red="1" green="0.34509803919999998" blue="0.33333333329999998" alpha="1" colorSpace="calibratedRGB"/>
                                 <constraints>
-                                    <constraint firstItem="DOw-AX-2dw" firstAttribute="top" secondItem="dLf-dG-NeW" secondAttribute="top" id="Pfg-qD-dFQ"/>
-                                    <constraint firstAttribute="height" constant="390" id="RfC-JX-w5Y"/>
-                                    <constraint firstAttribute="width" constant="343" id="ZrX-s3-1VW"/>
-                                    <constraint firstItem="DOw-AX-2dw" firstAttribute="leading" secondItem="dLf-dG-NeW" secondAttribute="leading" id="dsN-UZ-usW"/>
-                                    <constraint firstItem="n8V-91-QVB" firstAttribute="leading" secondItem="dLf-dG-NeW" secondAttribute="leading" id="fxK-OW-SX6"/>
-                                    <constraint firstAttribute="trailing" secondItem="DOw-AX-2dw" secondAttribute="trailing" id="rmg-hV-B9u"/>
-                                    <constraint firstAttribute="bottom" secondItem="n8V-91-QVB" secondAttribute="bottom" id="uGB-66-UNU"/>
-                                    <constraint firstAttribute="trailing" secondItem="n8V-91-QVB" secondAttribute="trailing" id="xrd-oX-kHc"/>
-                                    <constraint firstItem="n8V-91-QVB" firstAttribute="top" secondItem="DOw-AX-2dw" secondAttribute="bottom" id="zY3-kY-c2H"/>
+                                    <constraint firstAttribute="height" constant="346" id="peh-YM-4RY"/>
                                 </constraints>
-                            </view>
+                                <collectionViewFlowLayout key="collectionViewLayout" minimumLineSpacing="10" minimumInteritemSpacing="10" id="PDu-3d-D7K">
+                                    <size key="itemSize" width="83" height="83"/>
+                                    <size key="headerReferenceSize" width="0.0" height="0.0"/>
+                                    <size key="footerReferenceSize" width="0.0" height="0.0"/>
+                                    <inset key="sectionInset" minX="0.0" minY="0.0" maxX="0.0" maxY="0.0"/>
+                                </collectionViewFlowLayout>
+                                <cells>
+                                    <collectionViewCell opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" reuseIdentifier="PokeCell" id="hT6-f2-tot" customClass="PokeCell" customModule="PokeFinder" customModuleProvider="target">
+                                        <rect key="frame" x="0.0" y="0.0" width="83" height="83"/>
+                                        <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                                        <view key="contentView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center">
+                                            <rect key="frame" x="0.0" y="0.0" width="83" height="83"/>
+                                            <autoresizingMask key="autoresizingMask"/>
+                                            <subviews>
+                                                <imageView userInteractionEnabled="NO" contentMode="scaleAspectFit" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="1" translatesAutoresizingMaskIntoConstraints="NO" id="mPr-MY-7lc">
+                                                    <rect key="frame" x="0.0" y="0.0" width="83" height="83"/>
+                                                </imageView>
+                                            </subviews>
+                                        </view>
+                                        <constraints>
+                                            <constraint firstAttribute="bottom" secondItem="mPr-MY-7lc" secondAttribute="bottom" id="KNr-hF-uf1"/>
+                                            <constraint firstItem="mPr-MY-7lc" firstAttribute="leading" secondItem="hT6-f2-tot" secondAttribute="leading" id="tt9-AJ-ht9"/>
+                                            <constraint firstItem="mPr-MY-7lc" firstAttribute="top" secondItem="hT6-f2-tot" secondAttribute="top" id="uwj-k0-lHY"/>
+                                            <constraint firstAttribute="trailing" secondItem="mPr-MY-7lc" secondAttribute="trailing" id="yr9-E0-8vV"/>
+                                        </constraints>
+                                        <connections>
+                                            <outlet property="thumbImg" destination="mPr-MY-7lc" id="YSa-Su-HKi"/>
+                                        </connections>
+                                    </collectionViewCell>
+                                </cells>
+                            </collectionView>
+                            <searchBar contentMode="redraw" translatesAutoresizingMaskIntoConstraints="NO" id="DOw-AX-2dw">
+                                <rect key="frame" x="16" y="250" width="343" height="44"/>
+                                <textInputTraits key="textInputTraits"/>
+                            </searchBar>
                         </subviews>
                         <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
                         <constraints>
-                            <constraint firstItem="dLf-dG-NeW" firstAttribute="top" secondItem="Lys-sd-ftn" secondAttribute="bottom" constant="249" id="0Rq-so-mel"/>
-                            <constraint firstItem="dLf-dG-NeW" firstAttribute="leading" secondItem="4VX-PZ-Eu0" secondAttribute="leadingMargin" id="ECn-vj-6QZ"/>
-                            <constraint firstItem="7jx-03-n8Y" firstAttribute="top" secondItem="dLf-dG-NeW" secondAttribute="bottom" constant="8" id="fno-Qv-pVz"/>
-                            <constraint firstItem="dLf-dG-NeW" firstAttribute="trailing" secondItem="4VX-PZ-Eu0" secondAttribute="trailingMargin" id="hfZ-57-Fo9"/>
+                            <constraint firstItem="n8V-91-QVB" firstAttribute="trailing" secondItem="4VX-PZ-Eu0" secondAttribute="trailingMargin" id="FvC-si-iY4"/>
+                            <constraint firstItem="n8V-91-QVB" firstAttribute="leading" secondItem="DOw-AX-2dw" secondAttribute="leading" id="ZD8-Lw-QGX"/>
+                            <constraint firstItem="7jx-03-n8Y" firstAttribute="top" secondItem="n8V-91-QVB" secondAttribute="bottom" constant="27" id="cXx-s7-7T1"/>
+                            <constraint firstItem="n8V-91-QVB" firstAttribute="leading" secondItem="4VX-PZ-Eu0" secondAttribute="leadingMargin" id="qzc-gd-SmN"/>
+                            <constraint firstItem="n8V-91-QVB" firstAttribute="trailing" secondItem="DOw-AX-2dw" secondAttribute="trailing" id="xTw-2k-z8O"/>
+                            <constraint firstItem="n8V-91-QVB" firstAttribute="top" secondItem="DOw-AX-2dw" secondAttribute="bottom" id="zkN-iD-Ssf"/>
                         </constraints>
                     </view>
                     <connections>
-                        <outlet property="collection" destination="n8V-91-QVB" id="aHO-ue-Bvi"/>
-                        <outlet property="searchBar" destination="DOw-AX-2dw" id="QL1-Cq-XnO"/>
-                        <outlet property="view" destination="dLf-dG-NeW" id="odC-V8-9CE"/>
+                        <outlet property="collection" destination="n8V-91-QVB" id="Nk8-qY-yys"/>
+                        <outlet property="searchBar" destination="DOw-AX-2dw" id="E1z-1i-7Xv"/>
                     </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="zh2-xZ-hrS" userLabel="First Responder" sceneMemberID="firstResponder"/>

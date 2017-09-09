@@ -6,11 +6,14 @@
 //  Copyright © 2017 UpliftedStudios. All rights reserved.
 //
 
+
+
+//THIS IS THE RECEIVING VC
 import UIKit
 import MapKit
 import FirebaseDatabase
 
-class ViewController: UIViewController, MKMapViewDelegate, CLLocationManagerDelegate {
+class ViewController: UIViewController, MKMapViewDelegate, CLLocationManagerDelegate, DataSentDelegate {
 
     @IBOutlet weak var mapView: MKMapView!
     
@@ -142,13 +145,30 @@ class ViewController: UIViewController, MKMapViewDelegate, CLLocationManagerDele
             MKMapItem.openMaps(with: [destination], launchOptions: options)
         }
     }
+    
+    func userDidEnterData(data: Int) {
+        
+        let loc = CLLocation(latitude: mapView.centerCoordinate.latitude, longitude: mapView.centerCoordinate.longitude)
+        
+        let rand = data
+        createSighting(forLocation: loc, withPokemon: Int(rand))
+    }
+    
+    override func prepare(for segue: UIStoryboardSegue, sender: Any?) {
+        if segue.identifier == "presentationVC" {
+            let sendingVC: PresentationVC = segue.destination as! PresentationVC
+            sendingVC.delegate = self
+        }
+    }
 
     @IBAction func spotRandomPokemon(_ sender: AnyObject) {
             
-        let loc = CLLocation(latitude: mapView.centerCoordinate.latitude, longitude: mapView.centerCoordinate.longitude)
+//        let loc = CLLocation(latitude: mapView.centerCoordinate.latitude, longitude: mapView.centerCoordinate.longitude)
+//        
+//        let rand = arc4random_uniform(151) + 1
+//        createSighting(forLocation: loc, withPokemon: Int(rand))
         
-        let rand = arc4random_uniform(151) + 1
-        createSighting(forLocation: loc, withPokemon: Int(rand))
+        
     }
 }
 

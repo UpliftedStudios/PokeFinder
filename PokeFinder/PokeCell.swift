@@ -2,7 +2,7 @@
 //  PokeCell.swift
 //  PokeFinder
 //
-//  Created by Raphael M. Hidalgo on 8/8/17.
+//  Created by Raphael M. Hidalgo on 9/8/17.
 //  Copyright © 2017 UpliftedStudios. All rights reserved.
 //
 
@@ -12,18 +12,13 @@ class PokeCell: UICollectionViewCell {
     
     @IBOutlet weak var thumbImg: UIImageView!
     
-    var pokeNumber: NumberArray!
-    
-//    required init?(coder aDecoder: NSCoder) {
-//        super.init(coder: aDecoder)
-//        layer.cornerRadius = 5.0
-//    }
-    
-    func configureCell(_ pokeNumber: NumberArray) {
+    var pokeAnno: PokeAnnotation!
+
+    func configureCell(_ pokeAnno: PokeAnnotation) {
         
-        self.pokeNumber = pokeNumber
+        self.pokeAnno = pokeAnno
         
-        thumbImg.image = UIImage(named: "\(self.pokeNumber.pokeNumber)")
-        
+        thumbImg.image = UIImage(named: "\(self.pokeAnno.pokemonNumber)")
     }
+    
 }
