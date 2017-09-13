@@ -35,6 +35,6 @@
 	<key>GOOGLE_APP_ID</key>
 	<string>1:944785211595:ios:a1743b084ef76a79</string>
 	<key>DATABASE_URL</key>
-	<string>https://pushmynotifs-6dd80.firebaseio.com</string>
+	<string>https://pokefinder-979fe.firebaseio.com/</string>
 </dict>
 </plist>
